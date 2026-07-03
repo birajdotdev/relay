@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import { ClerkProvider } from "@/components/clerk-provider";
+import ConvexProvider from "@/components/convex-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,7 +34,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="flex min-h-full flex-col">
         <ClerkProvider>
-          <ThemeProvider>{children}</ThemeProvider>
+          <ConvexProvider>
+            <ThemeProvider>{children}</ThemeProvider>
+          </ConvexProvider>
         </ClerkProvider>
       </body>
     </html>

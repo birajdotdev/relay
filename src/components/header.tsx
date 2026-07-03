@@ -1,8 +1,6 @@
-import { Button } from "@/components/ui/button";
-import { Show, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
-import { Skeleton } from "./ui/skeleton";
+import { AuthButtons } from "./auth-buttons";
 
 export function Header() {
   return (
@@ -18,23 +16,7 @@ export function Header() {
           />
           <span className="text-lg font-semibold">Relay</span>
         </Link>
-        <div className="flex items-center gap-x-2">
-          <Show when="signed-out">
-            <SignInButton>
-              <Button variant="ghost">Sign in</Button>
-            </SignInButton>
-            <SignUpButton>
-              <Button>Sign up</Button>
-            </SignUpButton>
-          </Show>
-          <Show when="signed-in">
-            <UserButton
-              fallback={
-                <Skeleton className="aspect-square size-7.5 rounded-full" />
-              }
-            />
-          </Show>
-        </div>
+        <AuthButtons />
       </div>
     </header>
   );
