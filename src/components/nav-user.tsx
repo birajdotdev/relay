@@ -17,7 +17,13 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar";
 import { SignOutButton, useClerk } from "@clerk/nextjs";
-import { ChevronsUpDownIcon, LogOutIcon, SettingsIcon } from "lucide-react";
+import {
+  EllipsisVertical,
+  LogoutIcon,
+  SettingsIcon,
+  UserIcon,
+} from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 
 export function NavUser() {
   const { isMobile } = useSidebar();
@@ -40,13 +46,15 @@ export function NavUser() {
                 src={user?.imageUrl}
                 alt={user?.fullName ?? "User image"}
               />
-              <AvatarFallback>CN</AvatarFallback>
+              <AvatarFallback>
+                <HugeiconsIcon icon={UserIcon} />
+              </AvatarFallback>
             </Avatar>
             <div className="grid flex-1 text-left text-sm leading-tight">
               <span className="truncate font-medium">{user?.fullName}</span>
               <span className="truncate text-xs">{user?.username}</span>
             </div>
-            <ChevronsUpDownIcon className="ml-auto size-4" />
+            <HugeiconsIcon icon={EllipsisVertical} className="ml-auto" />
           </DropdownMenuTrigger>
           <DropdownMenuContent
             className="min-w-56"
@@ -76,14 +84,14 @@ export function NavUser() {
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               <DropdownMenuItem onClick={() => openUserProfile()}>
-                <SettingsIcon />
+                <HugeiconsIcon icon={SettingsIcon} />
                 Manage Account
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <SignOutButton>
               <DropdownMenuItem variant="destructive">
-                <LogOutIcon />
+                <HugeiconsIcon icon={LogoutIcon} />
                 Log out
               </DropdownMenuItem>
             </SignOutButton>

@@ -22,9 +22,11 @@ import {
   ArchiveXIcon,
   FileIcon,
   InboxIcon,
-  SendIcon,
-  Trash2Icon,
-} from "lucide-react";
+  SentIcon,
+  Trash2,
+} from "@hugeicons/core-free-icons";
+
+import { HugeiconsIcon } from "@hugeicons/react";
 import Image from "next/image";
 
 // This is sample data
@@ -38,31 +40,31 @@ const data = {
     {
       title: "Inbox",
       url: "#",
-      icon: <InboxIcon />,
+      icon: <HugeiconsIcon icon={InboxIcon} />,
       isActive: true,
     },
     {
       title: "Drafts",
       url: "#",
-      icon: <FileIcon />,
+      icon: <HugeiconsIcon icon={FileIcon} />,
       isActive: false,
     },
     {
       title: "Sent",
       url: "#",
-      icon: <SendIcon />,
+      icon: <HugeiconsIcon icon={SentIcon} />,
       isActive: false,
     },
     {
       title: "Junk",
       url: "#",
-      icon: <ArchiveXIcon />,
+      icon: <HugeiconsIcon icon={ArchiveXIcon} />,
       isActive: false,
     },
     {
       title: "Trash",
       url: "#",
-      icon: <Trash2Icon />,
+      icon: <HugeiconsIcon icon={Trash2} />,
       isActive: false,
     },
   ],
