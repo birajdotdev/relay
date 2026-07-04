@@ -15,7 +15,6 @@ export function ClerkProvider({
         options: {
           socialButtonsPlacement: "bottom",
           unsafe_disableDevelopmentModeWarnings: true,
-          logoImageUrl: "/logo.svg",
         },
         ...appearance,
       }}
